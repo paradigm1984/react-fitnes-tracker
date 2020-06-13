@@ -1,0 +1,22 @@
+{
+  "name": "react-fitness-tracker-v2-server",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}
