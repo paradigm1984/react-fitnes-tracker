@@ -65,7 +65,7 @@ export default class ExercisesList extends Component {
             </tr>
           </thead>
           <tbody>
-         
+           {this.exerciseList()}
           </tbody>
         </table>
       </div>
