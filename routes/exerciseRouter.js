@@ -4,9 +4,9 @@ let Exercise = require("../models/exercise.model");
 //get request that returns all exercises
 router.route('/').get((req, res) => {
     console.log("THIS IS THE ROOT ROUTE");
-    // Exercise.find()
-    // .then(exercises => res.json(exercises))
-    // .catch(err => res.status(400).json('error:  ', err));
+    Exercise.find()
+    .then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('error:  ', err));
 });
 
 //at /add post request to add a new exercise to db
