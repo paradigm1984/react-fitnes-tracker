@@ -31,7 +31,8 @@ export default class ExercisesList extends Component {
         exercises: response.data
       })
     })
-    .catch((error) =>{
+      .catch((error) => {
+        console.log("error found!");
       console.log(error)
     })
   }
