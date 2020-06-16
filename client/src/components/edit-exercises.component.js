@@ -105,12 +105,13 @@ export default class EditExercise extends Component {
               value={this.state.username}
               onChange={this.onChangeUsername}>
               {
-                this.state.users.map(function(user) {
-                  return <option 
-                    key={user}
-                    value={user}>{user}
-                    </option>;
-                })
+                // TODO: CHANGE THIS SPOT TO SOMETHING OTHER THAN MAP
+                // this.state.users.map(function(user) {
+                //   return <option 
+                //     key={user}
+                //     value={user}>{user}
+                //     </option>;
+                // })
               }
           </select>
         </div>
