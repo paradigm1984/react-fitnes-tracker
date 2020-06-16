@@ -52,9 +52,7 @@ export default class ExercisesList extends Component {
   // }
 
   exerciseList(){
-    return this.state.exercises.map(currentexercise => {
-      return currentexercise;
-    })
+    return this.state.exercises;
   }
 
 
