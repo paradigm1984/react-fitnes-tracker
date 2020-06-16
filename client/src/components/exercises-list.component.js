@@ -33,8 +33,8 @@ export default class ExercisesList extends Component {
       console.log("response.data", response.data);
     })
       .catch((error) => {
-        console.log("error found!");
-      console.log(error)
+        console.log("error found! ", error);
+        console.log("response: ", response);
     })
   }
 
@@ -54,8 +54,7 @@ export default class ExercisesList extends Component {
   // }
 
   exerciseList() {
-    return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id} />;
-
+    return this.state.exercises;
   }
 
 
