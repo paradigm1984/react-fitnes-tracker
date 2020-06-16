@@ -51,8 +51,11 @@ export default class ExercisesList extends Component {
   //   })
   // }
 
-  exerciseList(){
-    return this.state.exercises;
+  exerciseList() {
+    let exerciseLists = {
+
+    };
+    return this.state.exercises.exercises;
   }
 
 
