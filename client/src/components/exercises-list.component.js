@@ -28,9 +28,9 @@ export default class ExercisesList extends Component {
     Axios.get('/exercises/')
     .then(response =>{
       this.setState({
-        exercises: response.data
+        exercises: response
       })
-      console.log("response.data", response.data);
+      console.log("response.data", response);
     })
       .catch((error) => {
         console.log("error found!");
