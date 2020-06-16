@@ -39,8 +39,8 @@ connection.once('open', () => {
 const exercisesRouter = require('./routes/exerciseRouter');
 const usersRouter = require('./routes/usersRouter');
 
-app.use('/exercises', exercisesRouter);
-app.use('/users', usersRouter);
+app.use('/exercises/', exercisesRouter);
+app.use('/users/', usersRouter);
 
 app.use(cors());
 

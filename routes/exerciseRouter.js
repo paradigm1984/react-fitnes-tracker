@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Exercise = require("../models/exercise.model");
 
 //get request that returns all exercises
-router.route('/').get((req, res) => {
+router.route('/').get((res) => {
     console.log("THIS IS THE ROOT ROUTE");
     Exercise.find()
     .then(exercises => res.json(exercises))
