@@ -52,7 +52,7 @@ export default class ExercisesList extends Component {
   // }
 
   exerciseList() {
-    return JSON.stringify(this.state.exercises.exercise);
+    return JSON.stringify(this.state.exercises.collection);
   }
 
 
