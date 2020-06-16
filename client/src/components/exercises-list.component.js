@@ -30,6 +30,7 @@ export default class ExercisesList extends Component {
       this.setState({
         exercises: response.data
       })
+      console.log("response.data", response.data);
     })
       .catch((error) => {
         console.log("error found!");
