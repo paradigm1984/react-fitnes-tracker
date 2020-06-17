@@ -1,8 +1,7 @@
 const dbuser = `blanco`;
-const dbpassword = `blanco1`;
+const dbpassword = `blanco1984`;
 
-const MONGODB_URI = `mongodb://${dbuser}:${dbpassword}@ds021299.mlab.com:21299/heroku_zlprm6v0`;
+const MONGODB_URI = `mongodb://${dbuser}:${dbpassword}@ds161104.mlab.com:61104/react-fitness-tracker`;
 
 module.exports = MONGODB_URI;
-
 
