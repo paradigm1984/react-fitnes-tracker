@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const app = express();
 const port = process.env.PORT || 5000;
+const URI = require('../config/db_config');
 
 require('dotenv').config();
 
@@ -22,29 +22,23 @@ if (process.env.NODE_ENV === 'production') {
  });
 }
 
-
-mongoose.connect(
- process.env.MONGODB_URI,
- {
+mongoose.connect(process.env.MONGODB_URI || URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
- }
-);
+});
 
 const connection = mongoose.connection;
 connection.once('open', () => {
  console.log('Connected to mLab MongoDB Database successfully');
 })
 
-const exercisesRouter = require('./routes/exerciseRouter');
+const exercisesRouter = require('./routes/exercisesRouter');
 const usersRouter = require('./routes/usersRouter');
 
 app.use('/exercises/', exercisesRouter);
 app.use('/users/', usersRouter);
 
 app.use(cors());
-
-
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
