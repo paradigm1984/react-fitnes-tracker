@@ -27,10 +27,10 @@ export default class ExercisesList extends Component {
   componentDidMount(){
     Axios.get('/exercises/')
     .then(response =>{
-      // this.setState({
-      //   exercises: response.data
-      // })
-      console.log("response.data", response.data);
+      this.setState({
+        exercises: response.data
+      })
+      console.log("exercise data: ", response.data);
     })
       .catch((error) => {
         console.log("error found! ", error);
@@ -51,11 +51,6 @@ export default class ExercisesList extends Component {
       return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
     })
   }
-
-  // exerciseList() {
-  //   return this.state.exercises;
-  // }
-
 
   render() {
     return (
