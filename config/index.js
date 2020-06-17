@@ -1,3 +1,5 @@
+// config/index.js
+
 const dbuser = `blanco`;
 const dbpassword = `blanco1984`;
 

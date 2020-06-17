@@ -1,3 +1,5 @@
+// exercise.model.js
+
 var mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
@@ -13,6 +15,7 @@ var exerciseSchema = new Schema({
          type: String,
          required: true,
         },
+        
         duration: {
          type: Number,
          required: true,

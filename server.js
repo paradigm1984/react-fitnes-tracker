@@ -1,15 +1,24 @@
+// server.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
-const URI = require('./config/db_config');
+
+// CRUD operation routes
+const routes = require('./routes');
 
 require('dotenv').config();
 
+// db connection
+const URI = require('./config');
+require('./models');
+
+app.use(routes);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors());
 
 if (process.env.NODE_ENV === 'production') {
  // Exprees will serve up production assets
@@ -21,25 +30,6 @@ if (process.env.NODE_ENV === 'production') {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
  });
 }
-
-mongoose.connect(process.env.MONGODB_URI || URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-const connection = mongoose.connection;
-connection.once('open', () => {
- console.log('Connected to mLab MongoDB Database successfully');
-})
-
-const exercisesRouter = require('./routes/exercisesRouter');
-const usersRouter = require('./routes/usersRouter');
-
-app.use('/exercises/', exercisesRouter);
-app.use('/users/', usersRouter);
-
-app.use(cors());
-
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 

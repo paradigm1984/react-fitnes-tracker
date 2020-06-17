@@ -1,3 +1,5 @@
+// user.model.js
+
 var mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
