@@ -1,6 +1,6 @@
 // exerciseControllers.js
 
-const Exercise = require('../models/exercise.model');
+const Exercise = require('../../models/exercise.model');
 
 // Defining all methods and business logic for routes
 
