@@ -7,41 +7,14 @@ router
     .route('/')
     .get(usersController.findAll)
     .post(usersController.create);
-
-router
-    .route('/:id')
-    .get(usersController.findById)
-    .put(usersController.update)
-    .delete(usersController.remove);
+    
+// NO PLACE TO EDIT THIS INFO ON THE FRONT END YET
+// router
+//     .route('/:id')
+//     .put(usersController.update)
+//     .delete(usersController.remove);
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
