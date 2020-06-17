@@ -46,15 +46,15 @@ export default class ExercisesList extends Component {
   }
 
   // TODO: CHANGE THIS SPOT TO SOMETHING OTHER THAN MAP
-  // exerciseList(){
-  //   return this.state.exercises.map(currentexercise =>{
-  //     return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
-  //   })
-  // }
-
-  exerciseList() {
-    return this.state.exercises;
+  exerciseList(){
+    return this.state.exercises.map(currentexercise =>{
+      return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
+    })
   }
+
+  // exerciseList() {
+  //   return this.state.exercises;
+  // }
 
 
   render() {
