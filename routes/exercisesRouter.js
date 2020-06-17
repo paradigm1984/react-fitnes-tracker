@@ -14,31 +14,7 @@ router
     .put(exercisesController.update)
     .delete(exercisesController.remove);
 
-module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = router
 
 
 
