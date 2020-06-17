@@ -6,7 +6,7 @@ const exercisesRoutes = require('./exercisesRouter');
 const usersRoutes = require('./usersRouter');
 
 
-app.use('/exercises/', exercisesRoutes);
-app.use('/users/', usersRoutes);
+router.use('/exercises/', exercisesRoutes);
+router.use('/users/', usersRoutes);
 
 module.exports = router;
