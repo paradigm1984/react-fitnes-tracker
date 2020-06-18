@@ -1,26 +1,22 @@
 // server.js
-
+// declaring variables
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
-
+const exercisesRouter = require('./routes/exercisesRouter');
+const usersRouter = require('./routes/usersRouter');
 
 require('dotenv').config();
 
 // db connection
-const URI = require('./config');
 require('./models');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-
-const exercisesRouter = require('./routes/exercisesRouter');
-const usersRouter = require('./routes/usersRouter');
-
+// defining routes
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 

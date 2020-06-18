@@ -1,25 +1,5 @@
 // exercisesRouter.js
 
-// const router = require('express').Router();
-// const exercisesController = require('../controllers/exerciesController');
-
-// router
-//     .route('/')
-//     .get(exercisesController.findAll)
-//     .post(exercisesController.create);
-
-// router
-//     .route('/:id')
-//     .get(exercisesController.findById)
-//     .put(exercisesController.update)
-//     .delete(exercisesController.remove);
-
-// module.exports = router
-
-
-
-// ========== OLD ROUTER FILE ============= //
-
 const router = require("express").Router();
 let Exercise = require("../models/exercise.model");
 

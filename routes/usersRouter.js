@@ -1,27 +1,5 @@
 // usersRouter.js
 
-// const router = require('express').Router();
-// const usersController = require('../controllers/usersController');
-
-// router
-//     .route('/')
-//     .get(usersController.findAll)
-//     .post(usersController.create);
-
-// // NO PLACE TO EDIT THIS INFO ON THE FRONT END YET
-// router
-//     .route('/:id')
-//     .put(usersController.update)
-//     .delete(usersController.remove);
-
-// module.exports = router;
-
-
-
-
-
-// ========== OLD ROUTER FILE ============= //
-
 const router = require("express").Router();
 let User = require("../models/user.model");
 
