@@ -16,9 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// defining routes
-app.use('/exercises', exercisesRouter);
-app.use('/users', usersRouter);
+
 
 if (process.env.NODE_ENV === 'production') {
  // Exprees will serve up production assets
@@ -30,6 +28,10 @@ if (process.env.NODE_ENV === 'production') {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
  });
 }
+
+// defining routes
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 

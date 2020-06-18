@@ -1,5 +1,3 @@
-// user.model.js
-
 var mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
@@ -13,7 +11,7 @@ var UserSchema = new Schema({
       unique: true,
       trim: true,
       minlength: 3
-    }
+    },
 },   {
         timestamps: true,
     });

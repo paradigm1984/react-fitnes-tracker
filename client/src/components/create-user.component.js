@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Axios from "axios";
 
 
@@ -11,14 +11,14 @@ export default class CreateUser extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: ""
+      username: "",
     }
   }
 
   componentDidMount() {
     this.setState({
       users: ["test user"],
-      username: "username",
+      username: "test user"
     })
   }
 
@@ -28,23 +28,29 @@ export default class CreateUser extends Component {
     });
   }
 
-
   onSubmit(e) {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
     const user = {
-      username: this.state.username,
+      username: this.state.username
     }
-    console.log("username: ", this.state);
+    // console.log(user);
 
     Axios.post('/users/add', user)
-      .then(res => console.log(res.data));
+      .then(function (res) {
+      // handle success
+      console.log(res.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+
     this.setState({
-      username: ""
-    })
-
-
+      username: "",
+    });
+    console.log("username", this.state.username)
   };
 
 
@@ -53,14 +59,14 @@ export default class CreateUser extends Component {
       <div>
         <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
-          <div className="form-group"> 
+          <div className="form-group">
             <label>Username: </label>
-            <input  type="text"
-                required
-                className="form-control"
-                value={this.state.username}
-                onChange={this.onChangeUsername}
-                />
+            <input type="text"
+              required
+              className="form-control"
+              value={this.state.username}
+              onChange={this.onChangeUsername}
+            />
           </div>
           <div className="form-group">
             <input type="submit" value="Create User" className="btn btn-primary" />
