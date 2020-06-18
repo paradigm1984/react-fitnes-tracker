@@ -25,13 +25,12 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount(){
-    Axios.get('/exercises/')
-    .then(response =>{
-      this.setState({
-        exercises: response.data
-      })
-    })
-      // .catch(err => console.log(err));
+    Axios.get('/exercises')
+      .then(response => {
+        this.setState({
+          exercises: response.data
+        })
+      });
   }
 
   deleteExercise(id){
@@ -39,11 +38,8 @@ export default class ExercisesList extends Component {
     .then(res => console.log(res.data));
     this.setState({
       exercises: this.state.exercises.filter(el => el._id !== id)
-    })
-      // .catch(err => console.log(err));
+    });
   }
-
-  // TODO: CHANGE THIS SPOT TO SOMETHING OTHER THAN MAP
   exerciseList(){
     return this.state.exercises.map(currentexercise =>{
       return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
