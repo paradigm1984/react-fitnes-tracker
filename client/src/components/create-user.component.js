@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios from "axios";
 
 
@@ -31,26 +31,20 @@ export default class CreateUser extends Component {
   onSubmit(e) {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-
+    console.log("submitting form");
     const user = {
-      username: this.state.username
+      username: this.state.username,
     }
-    // console.log(user);
+    console.log(user);
 
     Axios.post('/users/add', user)
-      .then(function (res) {
-      // handle success
-      console.log(res.data);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+
 
     this.setState({
       username: "",
-    });
-    console.log("username", this.state.username)
+    })
   };
 
 

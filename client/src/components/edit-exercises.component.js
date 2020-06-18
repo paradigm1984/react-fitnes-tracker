@@ -32,9 +32,7 @@ export default class EditExercise extends Component {
           date: new Date(response.data.date)
         })   
       })
-      .catch(function (error) {
-        console.log(error);
-      })
+      .catch(err => console.log(err));
 
     axios.get('/users')
       .then(response => {
@@ -44,9 +42,7 @@ export default class EditExercise extends Component {
           })
         }
       })
-      .catch((error) => {
-        console.log(error);
-      })
+      .catch(err => console.log(err));
 
   }
 

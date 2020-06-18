@@ -32,9 +32,7 @@ export default class ExercisesList extends Component {
       })
       console.log("exercise data: ", response.data);
     })
-      .catch((error) => {
-        console.log("error found! ", error);
-    })
+      .catch(err => console.log(err));
   }
 
   deleteExercise(id){
@@ -43,6 +41,7 @@ export default class ExercisesList extends Component {
     this.setState({
       exercises: this.state.exercises.filter(el => el._id !== id)
     })
+      .catch(err => console.log(err));
   }
 
   // TODO: CHANGE THIS SPOT TO SOMETHING OTHER THAN MAP
