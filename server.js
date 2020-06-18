@@ -18,8 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 
-const exercisesRouter = require('/routes/exerciseRouter');
-const usersRouter = require('/routes/usersRouter');
+const exercisesRouter = require('./routes/exerciseRouter');
+const usersRouter = require('./routes/usersRouter');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
