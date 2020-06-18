@@ -9,20 +9,20 @@ var exerciseSchema = new Schema({
     // `name` must be unique and of type String
     username: {
         type: String,
-         required: true,
-        },
-        description: {
+        required: true,
+    },
+    description: {
          type: String,
          required: true,
-        },
-        duration: {
+    },
+    duration: {
          type: Number,
          required: true,
-        },
-        date: {
+    },
+    date: {
          type: Date,
          required: true,
-        },
+    },
 },   {
         timestamps: true,
     });

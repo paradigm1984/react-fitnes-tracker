@@ -8,12 +8,10 @@ export default class CreateUser extends Component {
     super(props);
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: "",
-      password: ""
+      username: ""
     }
   }
 
@@ -21,7 +19,6 @@ export default class CreateUser extends Component {
     this.setState({
       users: ["test user"],
       username: "username",
-      password: "password"
     })
   }
 
@@ -31,11 +28,6 @@ export default class CreateUser extends Component {
     });
   }
 
-  onChangePassword(e) {
-    this.setState({
-      password: e.target.value
-    });
-  }
 
   onSubmit(e) {
     // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -43,17 +35,15 @@ export default class CreateUser extends Component {
 
     const user = {
       username: this.state.username,
-      password: this.state.password
     }
-    console.log("username and password: ", this.state);
+    console.log("username: ", this.state);
 
     Axios.post('/users/add', user)
       .then(res => console.log(res.data));
       // .catch(err => console.log('error:  ', err));
 
     this.setState({
-      username: "",
-      password: ""
+      username: ""
     })
 
 
@@ -73,15 +63,6 @@ export default class CreateUser extends Component {
                 value={this.state.username}
                 onChange={this.onChangeUsername}
                 />
-          </div>
-          <div className="form-group">
-            <label>Password: </label>
-            <input type="text"
-              required
-              className="form-control"
-              value={this.state.password}
-              onChange={this.onChangePassword}
-            />
           </div>
           <div className="form-group">
             <input type="submit" value="Create User" className="btn btn-primary" />
