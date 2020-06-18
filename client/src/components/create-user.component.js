@@ -43,7 +43,7 @@ export default class CreateUser extends Component {
 
     const user = {
       username: this.state.username,
-      username: this.state.password
+      password: this.state.password
     }
     console.log("username and password: ", this.state);
 
