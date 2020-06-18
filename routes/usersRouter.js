@@ -29,9 +29,9 @@ router.route('/:id').delete((req, res) => {
 // update user based on ID
 router.route('/update/:id').post((req, res) => {
     User.findById(req.params.id)
-        .then(user => {
-            user.username = req.body.username;
-            user.save()
+        .then(usUserer => {
+            User.username = req.body.username;
+            User.save()
                 .then(() => res.json("User updated"))
                 .catch(err => res.status(400).json('error:  ', err))
         })
