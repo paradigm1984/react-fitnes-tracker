@@ -4,10 +4,10 @@ const router = require("express").Router();
 let User = require("../models/user.model");
 
 // returns all users
-router.route('/').get((req, res) => {
+router.route('/').get((res) => {
     User.find()
         .then(users => res.json(users))
-        .catch(err => res.status(400).json('error:  ', err));
+        .catch(err => res.status(400).json('Error:  ', err));
 });
 
 //add a new user to db
@@ -24,7 +24,7 @@ router.route('/add').post((req, res) => {
 router.route('/:id').delete((req, res) => {
     User.findByIdAndDelete(req.params.id)
         .then(() => res.json("User deleted"))
-        .catch(err => res.status(400).json('error:  ', err));
+        .catch(err => res.status(400).json('Error:  ', err));
 });
 
 // update user based on ID
@@ -34,9 +34,9 @@ router.route('/update/:id').post((req, res) => {
             User.username = req.body.username;
             User.save()
                 .then(() => res.json("User updated"))
-                .catch(err => res.status(400).json('error:  ', err))
+                .catch(err => res.status(400).json('Error:  ', err))
         })
-        .catch(err => res.status(400).json('error:  ', err));
+        .catch(err => res.status(400).json('Error:  ', err));
 });
 
 module.exports = router;
