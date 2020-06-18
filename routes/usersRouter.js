@@ -4,7 +4,7 @@ const router = require("express").Router();
 let User = require("../models/user.model");
 
 // returns all users
-router.route('/').get((req, es) => {
+router.route('/').get((req, res) => {
     User.find()
         .then(users => res.json(users))
         .catch(err => res.status(400).json('error:  ', err));
@@ -17,6 +17,7 @@ router.route('/add').post((req, res) => {
     newUser.save()
         .then(() => res.json('User added'))
         .catch(err => res.status(400).json('Error:  ', err));
+    
 });
 
 // delete user based on ID
@@ -29,7 +30,7 @@ router.route('/:id').delete((req, res) => {
 // update user based on ID
 router.route('/update/:id').post((req, res) => {
     User.findById(req.params.id)
-        .then(usUserer => {
+        .then(User => {
             User.username = req.body.username;
             User.save()
                 .then(() => res.json("User updated"))

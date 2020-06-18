@@ -4,7 +4,7 @@ const router = require("express").Router();
 let Exercise = require("../models/exercise.model");
 
 // returns all exercises
-router.route('/').get((res) => {
+router.route('/').get((req, res) => {
     Exercise.find()
         .then(exercises => res.json(exercises))
         .catch(err => res.status(400).json('error:  ', err));
@@ -30,7 +30,7 @@ router.route('/add').post((req, res) => {
 // get exercise based on the ID 
 router.route('/:id').get((req, res) => {
     Exercise.findById(req.params.id)
-        .then(Exercise => res.json(exercise))
+        .then(exercise => res.json(exercise))
         .catch(err => res.status(400).json('error:  ', err));
 });
 
