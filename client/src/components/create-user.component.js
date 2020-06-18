@@ -39,9 +39,7 @@ export default class CreateUser extends Component {
     console.log("username: ", this.state);
 
     Axios.post('/users/add', user)
-      .then(res => console.log(res.data))
-      .catch(err => console.log('error:  ', err));
-
+      .then(res => console.log(res.data));
     this.setState({
       username: ""
     })
