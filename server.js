@@ -6,8 +6,6 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
-// CRUD operation routes
-const routes = require('./routes');
 
 require('dotenv').config();
 
@@ -15,10 +13,16 @@ require('dotenv').config();
 const URI = require('./config');
 require('./models');
 
-app.use(routes);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+
+const exercisesRouter = require('/routes/exerciseRouter');
+const usersRouter = require('/routes/usersRouter');
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
 
 if (process.env.NODE_ENV === 'production') {
  // Exprees will serve up production assets
