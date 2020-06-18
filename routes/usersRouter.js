@@ -8,7 +8,6 @@ router.route('/').get((req, es) => {
     User.find()
         .then(users => res.json(users))
         .catch(err => res.status(400).json('error:  ', err));
-    console.log("users: ", users);
 });
 
 //add a new user to db
