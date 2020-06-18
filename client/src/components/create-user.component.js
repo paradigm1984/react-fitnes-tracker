@@ -45,10 +45,11 @@ export default class CreateUser extends Component {
       username: this.state.username,
       username: this.state.password
     }
-    console.log(user);
+    console.log("username and password: ", this.state);
 
     Axios.post('/users/add', user)
-    .then(res => console.log(res.data));
+      .then(res => console.log(res.data))
+      .catch(err => res.status(400).json('error:  ', err));
 
     this.setState({
       username: "",
