@@ -20,7 +20,7 @@ var UserSchema = new Schema({
       unique: true,
       trim: true,
       minlength: 8
-    },
+  }
 },   {
         timestamps: true,
     });
