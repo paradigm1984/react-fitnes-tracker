@@ -42,7 +42,9 @@ export default class ExercisesList extends Component {
   }
   exerciseList(){
     return this.state.exercises.map(currentexercise =>{
-      return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
+      // return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
+      console.log("whatever data is in the state: ", this.state.exercises)
+   
     })
   }
 
