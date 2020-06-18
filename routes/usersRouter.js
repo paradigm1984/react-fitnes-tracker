@@ -1,20 +1,20 @@
 // usersRouter.js
 
-const router = require('express').Router();
-const usersController = require('../controllers/usersController');
+// const router = require('express').Router();
+// const usersController = require('../controllers/usersController');
 
-router
-    .route('/')
-    .get(usersController.findAll)
-    .post(usersController.create);
+// router
+//     .route('/')
+//     .get(usersController.findAll)
+//     .post(usersController.create);
 
-// NO PLACE TO EDIT THIS INFO ON THE FRONT END YET
-router
-    .route('/:id')
-    .put(usersController.update)
-    .delete(usersController.remove);
+// // NO PLACE TO EDIT THIS INFO ON THE FRONT END YET
+// router
+//     .route('/:id')
+//     .put(usersController.update)
+//     .delete(usersController.remove);
 
-module.exports = router;
+// module.exports = router;
 
 
 
@@ -22,23 +22,23 @@ module.exports = router;
 
 // ========== OLD ROUTER FILE ============= //
 
-// const router = require("express").Router();
-// let User = require("../models/user.model");
+const router = require("express").Router();
+let User = require("../models/user.model");
 
-// router.route('/').get((req, res) =>{
-//     User.find()
-//     .then(users => res.json(users))
-//     .catch(err => res.status(400).json('error:  ', err));
-// });
+router.route('/').get((req, res) =>{
+    User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('error:  ', err));
+});
 
-// router.route('/add').post((req, res) =>{
-//     const username = req.body.username;
+router.route('/add').post((req, res) =>{
+    const username = req.body.username;
 
-//     const newUser = new User({username});
+    const newUser = new User({username});
 
-//     newUser.save()
-//     .then(() => res.json('User Added!!'))
-//     .catch(err => res.status(400).json('Error:  ', err));
-// });
+    newUser.save()
+    .then(() => res.json('User Added!!'))
+    .catch(err => res.status(400).json('Error:  ', err));
+});
 
-// module.exports = router;
+module.exports = router;
