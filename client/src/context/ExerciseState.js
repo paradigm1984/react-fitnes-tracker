@@ -1,7 +1,7 @@
 // ExerciseState.js
 
 import React, { createContext, useReducer } from 'react';
-import AppReducer from './ExerciseReducer';
+import ExerciseReducer from './ExerciseReducer';
 import axios from 'axios';
 
 // Initial state
@@ -17,7 +17,7 @@ export const ExerciseContext = createContext(initialState);
 
 // Provider component
 export const ExerciseProvider = ({ children }) => {
- const [state, dispatch] = useReducer(AppReducer, initialState);
+ const [state, dispatch] = useReducer(ExerciseReducer, initialState);
 
  // Actions
  // == getExercises
@@ -92,15 +92,17 @@ async function deleteExercise(id) {
 }
 
 
-
- // return (<ExerciseContext.Provider value={{
- //  transactions: state.transactions,
- //  error: state.error,
- //  loading: state.loading,
- //  getTransactions,
- //  deleteTransaction,
- //  addTransaction
- // }}>
- //  {children}
- // </ExerciseContext.Provider>);
+ return (
+  <ExerciseContext.Provider value={{
+  exercises: state.exercises,
+  error: state.error,
+  loading: state.loading,
+  getExercises,
+  getExerciseById,
+  deleteExercise,
+  addExercise
+ }}>
+  {children}
+ </ExerciseContext.Provider>
+);
 }
