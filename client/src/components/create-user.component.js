@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from "axios";
 
+// were handling the state with state and reducer files. first we need to pull in the functions bt using globalContext
+// and get rid of axios calls in component files
+// we also need to get any setting of the state out of component files
+// we wont need the constructor props or anything like that, were gunna use  const [var, setVar] = useState() and useContext();
 
 export default class CreateUser extends Component {
   constructor(props) {
