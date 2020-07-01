@@ -9,20 +9,25 @@ import ExercisesList from "./components/exercises-list.component";
 import EditExercises from "./components/edit-exercises.component";
 import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
-
+import { UserProvider } from './context/UserState';
+import { ExerciseProvider } from './context/ExerciseState';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <br />
-      <div className="container">
-      <Route path="/" exact component={ExercisesList} />
-      <Route path="/edit/:id" component={EditExercises} />
-      <Route path="/create" component={CreateExercise} />
-      <Route path="/user" component={CreateUser} />
-      </div>
-    </Router>
+    <UserProvider>
+    <ExerciseProvider>
+      <Router>
+        <Navbar />
+        <br />
+        <div className="container">
+        <Route path="/" exact component={ExercisesList} />
+        <Route path="/edit/:id" component={EditExercises} />
+        <Route path="/create" component={CreateExercise} />
+        <Route path="/user" component={CreateUser} />
+        </div>
+        </Router>
+      </ExerciseProvider>
+    </UserProvider>
   );
 }
 

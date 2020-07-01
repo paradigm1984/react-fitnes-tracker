@@ -5,7 +5,6 @@ const User = require("../models/user.model");
 exports.getUsers = async (req, res, next) => {
  try {
   const users = await User.find();
-
   return res.status(200).json({
    success: true,
    count: users.length,
@@ -14,16 +13,15 @@ exports.getUsers = async (req, res, next) => {
  } catch (err) {
   return res.status(500).json({
    success: false,
-   error: '.:.:SERVER ERROR:.:.'
+   error: '.:SERVER ERROR DISPLAYING USERS:.'
   });
  }
 }
 
 exports.addUser = async (req, res, next) => {
  try {
-  const { username } = req.body;
-
-  const user = await User.create(req.body);
+  const { userName } = req.body;
+  const user = await User.create(userName);
 
   return res.status(201).json({
    success: true,
@@ -40,7 +38,7 @@ exports.addUser = async (req, res, next) => {
   } else {
    return res.status(500).json({
     success: false,
-    error: '.:SERVER ERROR:.'
+    error: '.:SERVER ERROR ADDING USER:.'
    });
   }
  }
