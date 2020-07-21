@@ -1,5 +1,5 @@
 {
-  "name": "react-fitness-tracker-v2-server",
+  "name": "react-fitness-tracker-server",
   "version": "1.0.0",
   "description": "server",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "server": "node server.js",
     "client": "npm start --prefix client",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client        && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
